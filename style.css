@@ -612,4 +612,53 @@ footer {
         right: auto;
         left: 15px;
     }
+    
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: var(--branco);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.close-lightbox:hover {
+    color: var(--amarelo);
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--branco);
+    text-align: center;
+    width: 100%;
+  }
 }
