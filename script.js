@@ -47,3 +47,31 @@ document.querySelectorAll('.sobre-content, .bloco-card, .evento, .galeria-item')
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(el);
 });
+
+// Lightbox Galeria
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeLightbox = document.querySelector('.close-lightbox');
+
+// Abrir lightbox ao clicar na imagem
+document.querySelectorAll('.galeria-item img').forEach(img => {
+    img.addEventListener('click', function() {
+        lightbox.style.display = 'block';
+        lightboxImg.src = this.getAttribute('data-fullsize');
+        document.body.style.overflow = 'hidden'; // Previne scroll
+    });
+});
+
+// Fechar lightbox
+closeLightbox.addEventListener('click', function() {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+// Fechar ao clicar fora da imagem
+lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
